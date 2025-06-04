@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Skill Draws
+        <input type="number" name="" id="skill">
+    </div>
+    <div>
+        Summoning string
+        <input type="number" name="" id="summon">
+    </div>
+    <div>
+        Melo runes
+        <input type="number" name="" id="rune">
+    </div>
+    <div>
+        Energy recharge crystal
+        <input type="number" name="" id="crystal">
+    </div>
+    <div>
+        Mount Draws
+        <input type="number" name="" id="mount">
+    </div>
+    <div>
+        Stellarites
+        <input type="number" name="" id="star">
+    </div>
+    <div>
+        Week difference
+        <input type="number" id="week">
+    </div>
+    <div>Daily Rune buy<input type="number" name="" id="daily1"></div>
+    <div>Daily Energy buy<input type="number" name="" id="daily2"></div>
+    <div>Daily Mount ticket<input type="number" name="" id="daily3"></div>
+    <div><button onclick="calc()">Calculate pp</button></div>
+    <div>current resource PP: <input type="number" id="curr" readonly></div>
+    <div>final PP: <input type="number" id="pp" readonly></div>
+
+</body>
+<script>
+    function calc() {
+        let pp = 0
+        pp += document.getElementById("skill").value * 10
+        pp += document.getElementById("summon").value * 15
+        pp += document.getElementById("rune").value * 0.1
+        pp += document.getElementById("crystal").value * 3
+        pp += document.getElementById("mount").value * 2
+        pp += document.getElementById("star").value * 0.1
+        document.getElementById("curr").value = pp
+        let week = document.getElementById("week").value
+        pp += document.getElementById("daily1").value * week * 10
+        pp += document.getElementById("daily2").value * week * 10
+        pp += document.getElementById("daily3").value * (week > 7 ? 7 : week) * 15
+        pp += 98 * week
+        week = (week > 7 ? 7 : week)
+        pp += 160 * week
+        document.getElementById("pp").value = pp
+    }
+</script>
+
+</html>
