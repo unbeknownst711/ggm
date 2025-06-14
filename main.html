@@ -4,65 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Yayayayay</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div>
-        Skill Draws
+    <div class="rows">
+        <span class="textt">
+            Skill Draws
+        </span>
         <input type="number" name="" id="skill">
     </div>
-    <div>
-        Summoning string
+    <div class="rows">
+        <span class="textt">
+            Summoning string
+        </span>
         <input type="number" name="" id="summon">
     </div>
-    <div>
-        Melo runes
+    <div class="rows">
+        <span class="textt">
+            Melo runes
+        </span>
         <input type="number" name="" id="rune">
     </div>
-    <div>
-        Energy recharge crystal
+    <div class="rows">
+        <span class="textt">
+            Energy recharge crystal
+        </span>
         <input type="number" name="" id="crystal">
     </div>
-    <div>
-        Mount Draws
+    <div class="rows">
+        <span class="textt">
+            Mount Draws
+        </span>
         <input type="number" name="" id="mount">
     </div>
-    <div>
-        Stellarites
+    <div class="rows">
+        <span class="textt">
+            Stellarites
+        </span>
         <input type="number" name="" id="star">
     </div>
-    <div>
-        Week difference
+    <div class="rows">
+        <span class="textt">
+            Week difference
+        </span>
         <input type="number" id="week">
     </div>
-    <div>Daily Rune buy<input type="number" name="" id="daily1"></div>
-    <div>Daily Energy buy<input type="number" name="" id="daily2"></div>
-    <div>Daily Mount ticket<input type="number" name="" id="daily3"></div>
+    <hr>
+
+    <div class="rows">
+        <span class="textt">Daily Rune buy</span>
+        <input type="number" name="" id="daily1">
+    </div>
+    <div class="rows">
+        <span class="textt">Daily Energy buy</span>
+        <input type="number" name="" id="daily2">
+    </div>
+    <div class="rows">
+        <span class="textt">Daily Mount ticket</span>
+        <input type="number" name="" id="daily3">
+    </div>
+    <hr>
     <div><button onclick="calc()">Calculate pp</button></div>
-    <div>current resource PP: <input type="number" id="curr" readonly></div>
-    <div>final PP: <input type="number" id="pp" readonly></div>
+
+    <div class="rows">
+        <span class="textt">current resource PP: </span>
+        <input type="number" id="curr" readonly>
+    </div>
+    <div class="rows">
+        <span class="textt">final PP: </span>
+        <input type="number" id="pp" readonly>
+    </div>
 
 </body>
-<script>
-    function calc() {
-        let pp = 0
-        pp += document.getElementById("skill").value * 10
-        pp += document.getElementById("summon").value * 15
-        pp += document.getElementById("rune").value * 0.1
-        pp += document.getElementById("crystal").value * 3
-        pp += document.getElementById("mount").value * 2
-        pp += document.getElementById("star").value * 0.1
-        document.getElementById("curr").value = pp
-        let week = document.getElementById("week").value
-        pp += document.getElementById("daily1").value * week * 10
-        pp += document.getElementById("daily2").value * week * 10
-        pp += document.getElementById("daily3").value * (week > 7 ? 7 : week) * 15
-        pp += 98 * week
-        week = (week > 7 ? 7 : week)
-        pp += 160 * week
-        document.getElementById("pp").value = pp
-    }
-</script>
 
 </html>
